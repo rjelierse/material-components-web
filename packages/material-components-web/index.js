@@ -19,6 +19,7 @@ import * as base from '@material/base';
 import * as checkbox from '@material/checkbox';
 import * as dialog from '@material/dialog';
 import * as drawer from '@material/drawer';
+import * as expansionPanel from '@material/expansion-panel';
 import * as formField from '@material/form-field';
 import * as gridList from '@material/grid-list';
 import * as iconToggle from '@material/icon-toggle';
@@ -51,6 +52,7 @@ autoInit.register('MDCSimpleMenu', menu.MDCSimpleMenu);
 autoInit.register('MDCSelect', select.MDCSelect);
 autoInit.register('MDCSlider', slider.MDCSlider);
 autoInit.register('MDCToolbar', toolbar.MDCToolbar);
+autoInit.register('MDCExpansionPanel', expansionPanel.MDCExpansionPanel);
 
 // Export all components.
 export {
@@ -59,6 +61,7 @@ export {
   checkbox,
   dialog,
   drawer,
+  expansionPanel,
   formField,
   gridList,
   iconToggle,

@@ -128,6 +128,7 @@
           "dialog",
           "drawer",
           "elevation",
+          "expansion-panel",
           "fab",
           "form-field",
           "grid-list",
@@ -164,6 +165,7 @@
     "mdc-animation",
     "mdc-base",
     "mdc-checkbox",
+    "mdc-expansion-panel",
     "mdc-menu",
     "mdc-ripple"
   ]
