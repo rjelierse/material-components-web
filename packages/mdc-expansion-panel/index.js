@@ -31,7 +31,31 @@ export class MDCExpansionPanel extends MDCComponent {
 
   /** @return {!MDCExpansionPanelFoundation} */
   getDefaultFoundation() {
+    const summary = this.root_.querySelector(MDCExpansionPanelFoundation.strings.SUMMARY_SELECTOR);
+
     return new MDCExpansionPanelFoundation({
+      addClass: (className) => this.root_.classList.add(className),
+      removeClass: (className) => this.root_.classList.remove(className),
+      registerSummaryInteractionHandler: (event, handler) => summary.addEventListener(event, handler),
+      deregisterSummaryInteractionHandler: (event, handler) => summary.removeEventListener(event, handler),
     });
+  }
+
+  /** @return {boolean} */
+  get open() {
+    return this.foundation_.isExpanded();
+  }
+
+  /** @param {boolean} open */
+  set open(open) {
+    open ? this.foundation_.expand() : this.foundation_.collapse();
+  }
+
+  expand() {
+    this.foundation_.expand();
+  }
+
+  collapse() {
+    this.foundation_.collapse();
   }
 }

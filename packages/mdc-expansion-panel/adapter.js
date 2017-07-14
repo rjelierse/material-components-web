@@ -18,4 +18,21 @@
 
 /** @record */
 export default class MDCExpansionPanelAdapter {
+  /** @param {string} className */
+  addClass(className) {}
+
+  /** @param {string} className */
+  removeClass(className) {}
+
+  /**
+   * @param {string} event
+   * @param {Function} handler
+   */
+  registerSummaryInteractionHandler(event, handler) {}
+
+  /**
+   * @param {string} event
+   * @param {Function} handler
+   */
+  deregisterSummaryInteractionHandler(event, handler) {}
 }

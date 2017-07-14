@@ -16,8 +16,11 @@
 
 /** @enum {string} */
 export const cssClasses = {
+  ROOT: 'mdc-expansion-panel',
+  OPEN: 'mdc-expansion-panel--open',
 };
 
 /** @enum {string} */
 export const strings = {
+  SUMMARY_SELECTOR: `.${cssClasses.ROOT}__summary`,
 };

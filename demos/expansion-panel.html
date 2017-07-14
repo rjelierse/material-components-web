@@ -39,7 +39,60 @@
     </div>
 </header>
 <main class="mdc-toolbar-fixed-adjust">
+    <section class="hero mdc-typography">
+        <details class="mdc-expansion-panel" tabindex="0" data-mdc-auto-init="MDCExpansionPanel">
+            <summary class="mdc-expansion-panel__summary">
+                <span class="mdc-expansion-panel__title">Trip name</span>
+                <span class="mdc-expansion-panel__value">Carribean cruise</span>
+                <span class="mdc-expansion-panel__summary__marker material-icons">expand_more</span>
+            </summary>
+            <div class="mdc-expansion-panel__content"></div>
+        </details>
+    </section>
+
+    <section class="mdc-typography">
+        <h3>Single value</h3>
+        <section class="mdc-expansion-panel" tabindex="0" data-mdc-auto-init="MDCExpansionPanel">
+            <header class="mdc-expansion-panel__summary">
+                <span class="mdc-expansion-panel__title">Trip name</span>
+                <span class="mdc-expansion-panel__value">Carribean cruise</span>
+                <span class="mdc-expansion-panel__summary__marker material-icons">expand_more</span>
+            </header>
+            <div class="mdc-expansion-panel__content">
+                <label class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+                    <input type="text" id="name" class="mdc-textfield__input">
+                </label>
+            </div>
+        </section>
+    </section>
+
+    <section class="mdc-typography">
+        <h3>Multiple values</h3>
+        <section class="mdc-expansion-panel" tabindex="0" data-mdc-auto-init="MDCExpansionPanel">
+            <div class="mdc-expansion-panel__summary">
+                <span class="mdc-expansion-panel__title">Start and end dates</span>
+                <span class="mdc-expansion-panel__value"><span class="mdc-expansion-panel__value__label">Start date:</span> Feb 29, 2016</span>
+                <span class="mdc-expansion-panel__value"><span class="mdc-expansion-panel__value__label">End date:</span> Not set</span>
+                <span class="mdc-expansion-panel__summary__marker material-icons">expand_more</span>
+            </div>
+            <div class="mdc-expansion-panel__content">
+                <label class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+                    <input type="date" id="start-date" class="mdc-textfield__input" value="2016-02-29">
+                    <span class="mdc-textfield__label">Start date</span>
+                </label>
+                <label class="mdc-textfield" data-mdc-auto-init="MDCTextfield">
+                    <input type="date" id="end-date" class="mdc-textfield__input" value>
+                    <span class="mdc-textfield__label">End date</span>
+                </label>
+            </div>
+            <footer class="mdc-expansion-panel__actions">
+                <button type="button" class="mdc-expansion-panel__action mdc-button">Cancel</button>
+                <button type="button" class="mdc-expansion-panel__action mdc-button mdc-button--primary">Save</button>
+            </footer>
+        </section>
+    </section>
 </main>
 <script src="assets/material-components-web.js" charset="utf-8"></script>
+<script>mdc.autoInit(document);</script>
 </body>
 </html>

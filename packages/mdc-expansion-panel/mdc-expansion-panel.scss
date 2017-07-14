@@ -13,3 +13,101 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
+
+@import "@material/animation/variables";
+@import "@material/theme/mixins";
+@import "@material/typography/mixins";
+
+.mdc-expansion-panel {
+  &__summary {
+    display: flex;
+    align-items: center;
+    height: 48px;
+    padding: 0 24px;
+    transition: height 200ms $mdc-animation-linear-out-slow-in-timing-function;
+    outline: none;
+
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &__marker {
+      justify-self: flex-end;
+      margin-left: auto;
+      transition:
+        transform 200ms $mdc-animation-linear-out-slow-in-timing-function,
+        color 200ms $mdc-animation-linear-out-slow-in-timing-function;
+
+      @include mdc-theme-prop(color, text-icon-on-light);
+    }
+  }
+
+  &__title {
+    flex: none;
+    width: 30%;
+    margin-right: 16px;
+
+    @include mdc-theme-prop(color, text-primary-on-light);
+  }
+
+  &__value {
+    flex: 1;
+    margin-right: 16px;
+
+    @include mdc-theme-prop(color, text-secondary-on-light);
+
+    &__label {
+      @include mdc-theme-prop(color, text-hint-on-light);
+    }
+  }
+
+  &__content {
+    display: none;
+    padding: 0 24px 16px;
+  }
+
+  &__actions {
+    display: none;
+    justify-content: flex-end;
+    padding: 16px 8px 16px 24px;
+    border-top: 1px solid rgba(0, 0, 0, .12);
+  }
+
+  &__action {
+    margin-left: 8px;
+  }
+}
+
+.mdc-expansion-panel:focus {
+  outline: none;
+
+  .mdc-expansion-panel__summary {
+    background-color: #eee; // Grey 200
+  }
+
+  .mdc-expansion-panel__summary__marker {
+    @include mdc-theme-prop(color, text-secondary-on-light);
+  }
+}
+
+.mdc-expansion-panel--open {
+  .mdc-expansion-panel__summary {
+    height: 64px;
+  }
+
+  .mdc-expansion-panel__summary__marker {
+    transform: rotate(180deg);
+  }
+
+  .mdc-expansion-panel__value {
+    display: none;
+  }
+
+  .mdc-expansion-panel__content {
+    display: block;
+  }
+
+  .mdc-expansion-panel__actions {
+    display: flex;
+  }
+}

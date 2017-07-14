@@ -36,11 +36,41 @@ export default class MDCExpansionPanelFoundation extends MDCFoundation {
   /** @return {!MDCExpansionPanelAdapter} */
   static get defaultAdapter() {
     return {
+      addClass: () => {},
+      removeClass: () => {},
+      registerSummaryInteractionHandler: () => {},
+      deregisterSummaryInteractionHandler: () => {},
     };
   }
 
   /** @param {!MDCExpansionPanelAdapter} adapter */
   constructor(adapter) {
     super(Object.assign(MDCExpansionPanelFoundation.defaultAdapter, adapter));
+
+    this.expanded_ = false;
+    this.handleClick_ = () => this.isExpanded() ? this.collapse() : this.expand();
+  }
+
+  init() {
+    this.adapter_.registerSummaryInteractionHandler('click', this.handleClick_);
+  }
+
+  destroy() {
+    this.adapter_.deregisterSummaryInteractionHandler('click', this.handleClick_);
+  }
+
+  /** @return {boolean} */
+  isExpanded() {
+    return this.expanded_;
+  }
+
+  expand() {
+    this.expanded_ = true;
+    this.adapter_.addClass(MDCExpansionPanelFoundation.cssClasses.OPEN);
+  }
+
+  collapse() {
+    this.expanded_ = false;
+    this.adapter_.removeClass(MDCExpansionPanelFoundation.cssClasses.OPEN);
   }
 }
